@@ -35,5 +35,9 @@ describe('TweetsService', () => {
 
     expect(tweet.content).toBe('Hello World');
     expect(tweet.screen_name).toBe('John Doe');
+
+    const tweetCreated = await service['tweetModel'].findById(tweet._id);
+    expect(tweetCreated.content).toBe('Hello World');
+    expect(tweetCreated.screen_name).toBe('John Doe');
   });
 });

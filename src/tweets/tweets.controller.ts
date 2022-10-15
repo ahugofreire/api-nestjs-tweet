@@ -19,16 +19,16 @@ export class TweetsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tweetsService.findOne(+id);
+    return this.tweetsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTweetDto: UpdateTweetDto) {
-    return this.tweetsService.update(+id, updateTweetDto);
+    return this.tweetsService.update(id, updateTweetDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tweetsService.remove(+id);
+    return this.tweetsService.remove(id);
   }
 }

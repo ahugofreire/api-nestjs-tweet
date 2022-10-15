@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { Tweet, TweetSchema } from './tweet.entity';
 
+//Teste unitarios
 describe('Tweet Tests', () => { 
   describe('Class Tweet', () => {
     it('should create a new tweet', () => {
@@ -14,12 +15,14 @@ describe('Tweet Tests', () => {
     });
   });
 
+  //Teste de integração 
   describe('Using MongoDB', () => {
     let conn: mongoose.Mongoose;
 
     beforeEach(async () => {
+      const host = 'localhost'
       conn = await mongoose.connect(
-        'mongodb://root:root@db:27017/tweets_test?authSource=admin',
+        `mongodb://root:root@db:27017/tweets_test?authSource=admin`,
       );
     });
 

@@ -19,18 +19,18 @@ export class TweetsService {
   }
 
   findAll() {
-    return `This action returns all tweets`;
+    return this.tweetModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} tweet`;
+  findOne(id: string) {
+    return this.tweetModel.findById(id).exec();
   }
 
-  update(id: number, updateTweetDto: UpdateTweetDto) {
+  update(id: string, updateTweetDto: UpdateTweetDto) {
     return `This action updates a #${id} tweet`;
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return `This action removes a #${id} tweet`;
   }
 }
